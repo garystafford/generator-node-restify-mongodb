@@ -2,12 +2,13 @@
 var yeoman = require('yeoman-generator');
 var chalk = require('chalk');
 var yosay = require('yosay');
+var mkdirp = require('mkdirp');
 
 module.exports = yeoman.Base.extend({
   prompting: function () {
     // Have Yeoman greet the user.
     this.log(yosay(
-      'Welcome to the impeccable ' + chalk.red('generator-node-restify-mongodb') + ' generator!'
+      'Welcome to the ' + chalk.red('generator-node-restify-mongodb') + ' generator!'
     ));
   },
   install: function () {
@@ -15,15 +16,14 @@ module.exports = yeoman.Base.extend({
       bower: false,
       npm: true,
       callback: function () {
-        console.log('Everything is ready!');
+        console.log('npm dependencies installed!');
       }
     });
   },
   app: function () {
     this.copy('app.js', 'app.js');
-    this.mkdir('app');
-    this.mkdir('app/models');
-    this.mkdir('app/routes');
+    mkdirp('app/models');
+    mkdirp('app/routes');
     this.copy('app/models/index.js', 'app/models/index.js');
     this.copy('app/models/widget.js', 'app/models/widget.js');
     this.copy('app/routes/index.js', 'app/routes/index.js');
@@ -31,15 +31,15 @@ module.exports = yeoman.Base.extend({
     this.copy('app/routes/utilities.js', 'app/routes/utilities.js');
   },
   config: function () {
-    this.mkdir('config');
+    mkdirp('config');
     this.copy('config/config.js', 'config/config.js');
   },
   data: function () {
-    this.mkdir('data');
+    mkdirp('data');
     this.copy('data/widgets.json', 'data/widgets.json');
   },
   spec: function () {
-    this.mkdir('spec');
+    mkdirp('spec');
     this.copy('spec/utils_spec.js', 'spec/utils_spec.js');
     this.copy('spec/widget_spec.js', 'spec/widget_spec.js');
   },
