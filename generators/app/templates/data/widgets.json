@@ -1,0 +1,82 @@
+[
+  {
+    "product_id": "RTHGP1FCGN",
+    "name": "Reflupper",
+    "color": "Red",
+    "size": "Large",
+    "price": "$12.95",
+    "inventory": 25
+  },
+  {
+    "product_id": "SVHXPAWEOD",
+    "name": "Voonex",
+    "color": "Green",
+    "size": "Medium",
+    "price": "$10.99",
+    "inventory": 50
+  },
+  {
+    "product_id": "GKO1SFX04M",
+    "name": "Jukelox",
+    "color": "Blue",
+    "size": "Small",
+    "price": "$25.49",
+    "inventory": 75
+  },
+  {
+    "product_id": "3YIRGZ6TDW",
+    "name": "Groopster",
+    "color": "Yellow",
+    "size": "Large",
+    "price": "$99.95",
+    "inventory": 100
+  },
+  {
+    "product_id": "4OZNPBMIDR",
+    "name": "Fapster",
+    "color": "Orange",
+    "size": "Medium",
+    "price": "29.99",
+    "inventory": 5
+  },
+  {
+    "product_id": "6T2HC5MIZ9",
+    "name": "Chaintwist",
+    "color": "Purple",
+    "size": "Tiny",
+    "price": "$99.95",
+    "inventory": 15
+  },
+  {
+    "product_id": "ERZ1RMJFR3",
+    "name": "Glozzom",
+    "color": "Red",
+    "size": "Huge",
+    "price": "$199.98",
+    "inventory": 35
+  },
+  {
+    "product_id": "0BVCLPDZ42",
+    "name": "Chaintwist",
+    "color": "Blue",
+    "size": "Medium",
+    "price": "$89.95",
+    "inventory": 55
+  },
+  {
+    "product_id": "N43WV5234S",
+    "name": "Zapster",
+    "color": "Green",
+    "size": "Tiny",
+    "price": "$17.49",
+    "inventory": 65
+  },
+  {
+    "product_id": "N212QZOD9B",
+    "name": "Pentwist",
+    "color": "Yellow",
+    "size": "Huge",
+    "price": "$159.98",
+    "inventory": 95
+  }
+]
