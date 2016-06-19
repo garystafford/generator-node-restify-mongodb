@@ -22,10 +22,10 @@ module.exports = yeoman.Base.extend({
   app: function () {
     this.copy('app.js', 'app.js');
     this.mkdir('app');
-    this.mkdir('app/modules');
+    this.mkdir('app/models');
     this.mkdir('app/routes');
-    this.copy('app/modules/index.js', 'app/modules/index.js');
-    this.copy('app/modules/widget.js', 'app/modules/widget.js');
+    this.copy('app/models/index.js', 'app/models/index.js');
+    this.copy('app/models/widget.js', 'app/models/widget.js');
     this.copy('app/routes/index.js', 'app/routes/index.js');
     this.copy('app/routes/widget.js', 'app/routes/widget.js');
     this.copy('app/routes/utilities.js', 'app/routes/utilities.js');
