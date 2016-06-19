@@ -60,3 +60,4 @@ gulp.task('coveralls', ['test'], function () {
 
 gulp.task('prepublish', ['nsp']);
 gulp.task('default', ['static', 'test', 'coveralls']);
+//gulp.task('default', ['test']);
