@@ -1,4 +1,5 @@
-# generator-node-restify-mongodb [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
+# generator-node-restify-mongodb  
+[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
 
 ## Introduction
 Generates a basic RESTful CRUD API, based on [Node](https://nodejs.org), [Restify](http://restify.com),
