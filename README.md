@@ -116,7 +116,7 @@ mongo
 ```
 
 #### Environmental Variables
-The application uses the following environment variables and defaults, which are found in the config/config.js file.
+The application uses the following environment variables and defaults, which are found in the 'config/config.js' file.
 ``` javascript
 var NODE_ENV   = process.env.NODE_ENV   || 'development';
 var NODE_HOST  = process.env.NODE_HOST  || '127.0.0.1';
