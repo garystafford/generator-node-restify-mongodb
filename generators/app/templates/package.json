@@ -1,20 +1,7 @@
 {
-  "name": "generator-node-restify-mongodb",
-  "version": "0.1.1",
-  "description": "Generates a basic RESTful CRUD API, based on Node, Restify, and MongoDB",
-  "homepage": "https://github.com/garystafford/generator-node-restify-mongodb",
-  "author": {
-    "name": "Gary A. Stafford",
-    "email": "garystafford@rochester.rr.com",
-    "url": "http://www.programmaticponderings.com"
-  },
-  "url": "https://github.com/garystafford/generator-node-restify-mongodb/issues",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/garystafford/generator-node-restify-mongodb.git"
-  },
+  "name": "node-restify-mongodb",
+  "version": "0.0.0",
   "main": "app.js",
-  "license": "Apache-2.0",
   "scripts": {
     "start": "node app.js | ./node_modules/bunyan/bin/bunyan",
     "test": "grunt test"

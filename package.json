@@ -1,8 +1,8 @@
 {
   "name": "generator-node-restify-mongodb",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Generates a basic RESTful CRUD API, based on Node, Restify, and MongoDB",
-  "homepage": "https://github.com/garystafford/node-restify-mongodb",
+  "homepage": "https://github.com/garystafford/generator-node-restify-mongodb",
   "author": {
     "name": "Gary A. Stafford",
     "email": "garystafford@rochester.rr.com",
@@ -13,7 +13,7 @@
   ],
   "main": "generators/index.js",
   "keywords": [
-    "resify",
+    "restify",
     "mongodb",
     "node",
     "jasmine",
