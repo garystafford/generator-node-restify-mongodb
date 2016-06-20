@@ -124,9 +124,7 @@ var NODE_PORT  = process.env.NODE_PORT  || 3000;
 var MONGO_HOST = process.env.MONGO_HOST || '127.0.0.1';
 var MONGO_PORT = process.env.MONGO_PORT || 27017;
 var LOG_LEVEL  = process.env.LOG_LEVEL  || 'info';
-
 var APP_NAME   = 'node-restify-mongodb-';
-
 ```
 
 ## Getting To Know Yeoman
