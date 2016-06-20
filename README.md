@@ -8,7 +8,7 @@ This [Yeoman generator](http://yeoman.io/generators/) scaffolds a basic RESTful 
  applications, with templating and rendering, Restify is keenly focused on building API services that are maintainable and observable.         
 
 Portions of this project's file structure and code are derived from what I consider the best parts of several different
- projects, most notably:[generator-express](https://github.com/expressjs/generator),
+ projects, most notably: [generator-express](https://github.com/expressjs/generator),
  [generator-restify-mongo](https://github.com/lawrence-yu/generator-restify-mongo), and
  [generator-restify](https://github.com/chris-l/generator-restify).
 
