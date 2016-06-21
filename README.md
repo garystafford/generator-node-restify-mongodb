@@ -45,10 +45,17 @@ Start the application
 npm run
 ```
 
-To test the application, the sample documents must be imported into MongoDB (see above), and the application must be running (see above)
+To test the application using jshint and jasmine-node, the sample documents must be imported into MongoDB (see above), and the application must be running (see above)
 ``` bash
 npm test
 ```
+
+Similarly, to review code coverage, using grunt, mocha, istanbul, and grunt-mocha-istanbul
+``` bash
+grunt coverage
+```
+
+
 
 Test the running application by cURLing the '/widgets' endpoint
 ``` bash

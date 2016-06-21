@@ -34,7 +34,7 @@ describe('Utility URIs', function () {
 
     it('should respond with \'true\'', function (done) {
       request(options, function (error, response, body) {
-        expect(body).toBe('true');
+        body.should.be.exactly('true');
         done();
       });
     });

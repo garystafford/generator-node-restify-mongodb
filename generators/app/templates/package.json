@@ -16,7 +16,9 @@
   "devDependencies": {
     "grunt": "^1.0.1",
     "grunt-exec": "^1.0.0",
+    "grunt-mocha-istanbul": "^5.0.1",
     "grunt-mongoimport": "^0.1.7",
+    "istanbul": "^0.4.4",
     "jasmine-node": "^1.14.5",
     "jshint": "^2.9.2",
     "mocha": "^2.5.3",

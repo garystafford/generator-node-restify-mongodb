@@ -24,22 +24,18 @@ var log = require(path.join(__dirname, '../log'));
 
 //////////// HELPER FUNCTIONS ////////////
 
-function saveWidget(widget, done) {
+function saveWidget(widget) {
   widget.save(function (error) {
     if (error) {
       log.error(error);
-    } else {
-      done();
     }
   });
 }
 
-function removeWidgets(options, done) {
+function removeWidgets(options) {
   Widget.remove(options, function (error) {
     if (error) {
       log.error(error);
-    } else {
-      done();
     }
   });
 }
@@ -50,8 +46,8 @@ function removeWidgets(options, done) {
 // find all widgets
 describe('Widget URIs', function () {
   describe('GET /widgets', function () {
-    beforeEach(function (done) {
-      removeWidgets({}, done);
+    beforeEach(function () {
+      removeWidgets({});
 
       saveWidget(new Widget({
         product_id: 'YMIYW2VROS',
@@ -60,7 +56,7 @@ describe('Widget URIs', function () {
         size: 'Huge',
         price: '$99.99',
         inventory: 96
-      }), done);
+      }));
 
       saveWidget(new Widget({
         product_id: 'FGBRYL6XSF',
@@ -69,7 +65,7 @@ describe('Widget URIs', function () {
         size: 'Huge',
         price: '$127.49',
         inventory: 1205
-      }), done);
+      }));
 
       saveWidget(new Widget({
         product_id: '5H7HW8Y1E2',
@@ -78,11 +74,11 @@ describe('Widget URIs', function () {
         size: 'Tiny',
         price: '$1.49',
         inventory: 0
-      }), done);
+      }));
     });
 
-    afterEach(function (done) {
-      removeWidgets({}, done);
+    afterEach(function () {
+      removeWidgets({});
     });
 
     var url = base_url + '/widgets';
@@ -120,8 +116,8 @@ describe('Widget URIs', function () {
 
   // find one widget
   describe('GET /widgets/:product_id', function () {
-    beforeEach(function (done) {
-      removeWidgets({}, done);
+    beforeEach(function () {
+      removeWidgets({});
 
       saveWidget(new Widget({
         product_id: '4YFZH127BX',
@@ -130,7 +126,7 @@ describe('Widget URIs', function () {
         size: 'Small',
         price: '$19.93',
         inventory: 13
-      }), done);
+      }));
 
       saveWidget(new Widget({
         product_id: '0EJLZK6BK8',
@@ -139,11 +135,11 @@ describe('Widget URIs', function () {
         size: 'Huge',
         price: '$137.49',
         inventory: 46
-      }), done);
+      }));
     });
 
-    afterEach(function (done) {
-      removeWidgets({}, done);
+    afterEach(function () {
+      removeWidgets({});
     });
 
     var url1 = base_url + '/widgets/4YFZH127BX';
@@ -199,11 +195,11 @@ describe('Widget URIs', function () {
 
   // create new widget
   describe('POST /widgets', function () {
-    beforeEach(function (done) {
-      removeWidgets({}, done);
+    beforeEach(function () {
+      removeWidgets({});
     });
-    afterEach(function (done) {
-      removeWidgets({}, done);
+    afterEach(function () {
+      removeWidgets({});
     });
 
     var widget = {
@@ -251,11 +247,11 @@ describe('Widget URIs', function () {
 
   // create new widget
   describe('POST /widgets', function () {
-    beforeEach(function (done) {
-      removeWidgets({}, done);
+    beforeEach(function () {
+      removeWidgets({});
     });
-    afterEach(function (done) {
-      removeWidgets({}, done);
+    afterEach(function () {
+      removeWidgets({});
     });
 
     var widget = { // no 'name' key
@@ -295,8 +291,8 @@ describe('Widget URIs', function () {
 
   // update one widget
   describe('PUT /widgets', function () {
-    beforeEach(function (done) {
-      removeWidgets({}, done);
+    beforeEach(function () {
+      removeWidgets({});
 
       saveWidget(new Widget({
         product_id: 'ZC7DV7BSPE',
@@ -305,11 +301,11 @@ describe('Widget URIs', function () {
         size: 'Small',
         price: '$9.92',
         inventory: 27
-      }), done);
+      }));
     });
 
-    afterEach(function (done) {
-      removeWidgets({}, done);
+    afterEach(function () {
+      removeWidgets({});
     });
 
     var widget = { // modified inventory level
@@ -350,8 +346,8 @@ describe('Widget URIs', function () {
 
   // update and confirm one widget
   describe('PUT /widgets', function () {
-    beforeEach(function (done) {
-      removeWidgets({}, done);
+    beforeEach(function () {
+      removeWidgets({});
 
       saveWidget(new Widget({
         product_id: 'ZC7DV7BSPE',
@@ -360,7 +356,7 @@ describe('Widget URIs', function () {
         size: 'Small',
         price: '$9.92',
         inventory: 27
-      }), done);
+      }));
 
       var widget = { // modified inventory level
         product_id: 'ZC7DV7BSPE',
@@ -384,12 +380,11 @@ describe('Widget URIs', function () {
       };
 
       request(options1, function (error, response, body) {
-        done();
       });
     });
 
-    afterEach(function (done) {
-      removeWidgets({}, done);
+    afterEach(function () {
+      removeWidgets({});
     });
 
     var url2 = base_url + '/widgets/ZC7DV7BSPE';
@@ -413,8 +408,8 @@ describe('Widget URIs', function () {
 
   // delete one widget
   describe('DELETE /widgets/:product_id', function () {
-    beforeEach(function (done) {
-      removeWidgets({}, done);
+    beforeEach(function () {
+      removeWidgets({});
 
       saveWidget(new Widget({
         product_id: '3NDO87DF3C',
@@ -423,11 +418,11 @@ describe('Widget URIs', function () {
         size: 'Small',
         price: '$71.95',
         inventory: 653
-      }), done);
+      }));
     });
 
-    afterEach(function (done) {
-      removeWidgets({}, done);
+    afterEach(function () {
+      removeWidgets({});
     });
 
     var url = base_url + '/widgets/3NDO87DF3C';
