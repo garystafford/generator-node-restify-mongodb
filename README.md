@@ -26,7 +26,7 @@ Portions of this project's file structure and code are derived from what I consi
 ## Installation
 To begin, install install [Yeoman](http://yeoman.io) and generator-node-restify-mongodb using [npm](https://www.npmjs.com/),
  using npm. The generator assumes you have pre-installed Node and MongoDB.
-``` bash
+``` shell
 npm install -g yo
 npm install -g generator-node-restify-mongodb
 ```
@@ -127,8 +127,9 @@ The Widget is the basic document object used throughout the application. It is u
 ```
 
 #### MongoDB
-Use the [mongo shell](https://docs.mongodb.com/manual/mongo/) to access the application's MongoDB instance and display the imported sample documents.
-```
+Use the [mongo shell](https://docs.mongodb.com/manual/mongo/) to access the application's MongoDB instance and display
+ the imported sample documents.
+``` text
 mongo
  > show dbs
  > use node-restify-mongodb-development
