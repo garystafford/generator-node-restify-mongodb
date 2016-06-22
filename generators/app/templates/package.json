@@ -1,5 +1,6 @@
 {
   "name": "node-restify-mongodb",
+  "description": "A basic RESTful CRUD API service, based on Node, Restify, and MongoDB",
   "version": "0.0.0",
   "main": "app.js",
   "scripts": {

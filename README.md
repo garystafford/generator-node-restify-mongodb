@@ -1,12 +1,10 @@
 # generator-node-restify-mongodb
 
-[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
+[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url]
+ [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
 
 ## Introduction
-To reduce the repetitive coding of boilerplate functionality within several recent Node projects, and to ensure
- consistency between those projects, I created a [Yeoman generator](http://yeoman.io/generators/),
- [generator-node-restify-mongodb](https://www.npmjs.com/package/generator-node-restify-mongodb).
- This Yeoman generator scaffolds a basic RESTful CRUD API service, a Node application, based on
+This Yeoman generator scaffolds a basic RESTful CRUD API service, a Node application, based on
  [Node.js](https://nodejs.org), [Restify](http://restify.com), and [MongoDB](https://www.mongodb.com).
 
 According to their website, Restify, used most notably by [Netflix](http://techblog.netflix.com/2014/11/nodejs-in-flames.html),
@@ -72,7 +70,7 @@ Similarly, the following command displays a code coverage report, using the grun
 grunt coverage
 ```
 
-Grunt uses the grunt-mocha-istanbul module to execute the same set of jasmine-node tests as shown above.
+Grunt uses the grunt-mocha-istanbul module to execute the same set of jasmine-node tests.
  Based on those tests, the application's code coverage (statement, line, function, and branch coverage) is displayed.
 
 You may test the running application, directly, by cURLing the '/widgets' endpoints.
