@@ -5,12 +5,12 @@
 ## Introduction
 To reduce the repetitive coding of boilerplate functionality within several recent Node projects, and to ensure
  consistency between those projects, I created a [Yeoman generator](http://yeoman.io/generators/),
- [generator-node-restify-mongodb](https://www.npmjs.com/package/generator-node-restify-mongodb)
+ [generator-node-restify-mongodb](https://www.npmjs.com/package/generator-node-restify-mongodb).
  This Yeoman generator scaffolds a basic RESTful CRUD API service, a Node application, based on
  [Node.js](https://nodejs.org), [Restify](http://restify.com), and [MongoDB](https://www.mongodb.com).
 
-Restify, used most notably by [Netflix](http://techblog.netflix.com/2014/11/nodejs-in-flames.html),
- borrows heavily from [Express](http://expressjs.com), according to the Restify website. However, while Express is targeted at browser
+According to their website, Restify, used most notably by [Netflix](http://techblog.netflix.com/2014/11/nodejs-in-flames.html),
+ borrows heavily from [Express](http://expressjs.com). However, while Express is targeted at browser
  applications, with templating and rendering, Restify is keenly focused on building API services that are maintainable and observable.
 
 Along with Node, Restify, and MongoDB, the project also implements the following packages: [Bunyan](https://github.com/trentm/node-bunyan)
@@ -45,7 +45,7 @@ Next, import the supplied set of sample widget documents into the local developm
 NODE_ENV=development grunt mongoimport --verbose
 ```
 
-Derived from Yeoman's Express Generator, this application contains configuration for three typical environments:
+Similar to Yeoman's Express Generator, this application contains configuration for three typical environments:
  'Development' (default), 'Test', and 'Production'. If you want to import the sample widget documents into your Test or
   Production instances of MongoDB, first change the 'NODE_ENV' environment variable value.
 ``` bash
@@ -65,7 +65,7 @@ npm test
 ```
 
 The project contains a set of jasmine-node tests, split between the '/widgets' and the '/utils' endpoints.
- If the application is running correctly, you should the test results displayed in the terminal window.
+ If the application is running correctly, you should see the test results displayed in the terminal window.
 
 Similarly, the following command displays a code coverage report, using the grunt, mocha, istanbul, and grunt-mocha-istanbul node modules.
 ``` bash
