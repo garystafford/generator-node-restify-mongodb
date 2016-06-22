@@ -112,7 +112,7 @@ server.get({path: PATH + '/env', version: VERSION}, environment);
 ```
 
 #### Widget
-The Widget is the basic document object used throughout the application. It is used primarily, to demonstrate
+The Widget is the basic document object used throughout the application. It is used, primarily, to demonstrate
  Mongoose's [Model](http://mongoosejs.com/docs/models.html) and [Schema](http://mongoosejs.com/docs/guide.html).
  The Widget object contains the following fields, as shown in the sample widget, below.
 ``` json
