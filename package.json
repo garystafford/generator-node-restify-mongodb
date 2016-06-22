@@ -1,7 +1,7 @@
 {
   "name": "generator-node-restify-mongodb",
-  "version": "0.1.3",
-  "description": "Generates a basic RESTful CRUD API, based on Node, Restify, and MongoDB",
+  "version": "0.1.4",
+  "description": "Scaffolds a basic RESTful CRUD API, based on Node, Restify, and MongoDB",
   "homepage": "https://github.com/garystafford/generator-node-restify-mongodb",
   "author": {
     "name": "Gary A. Stafford",

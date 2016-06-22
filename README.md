@@ -1,75 +1,98 @@
-# generator-node-restify-mongodb  
+# generator-node-restify-mongodb
+
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
 
 ## Introduction
-This [Yeoman generator](http://yeoman.io/generators/) scaffolds a basic RESTful CRUD API, based on [Node](https://nodejs.org), [Restify](http://restify.com),
- and [MongoDB](https://www.mongodb.com). Restify, used most notably by [Netflix](http://techblog.netflix.com/2014/11/nodejs-in-flames.html),
- borrows heavily from [Express](http://expressjs.com), according to the Restify website. However, while Express is targeted at browser
- applications, with templating and rendering, Restify is keenly focused on building API services that are maintainable and observable.         
+To reduce the repetitive coding of boilerplate functionality within several recent Node projects, and to ensure
+ consistency between those projects, I created a [Yeoman generator](http://yeoman.io/generators/),
+ [generator-node-restify-mongodb](https://www.npmjs.com/package/generator-node-restify-mongodb)
+ This Yeoman generator scaffolds a basic RESTful CRUD API service, a Node application, based on
+ [Node.js](https://nodejs.org), [Restify](http://restify.com), and [MongoDB](https://www.mongodb.com).
 
-Portions of this project's file structure and code are derived from what I consider the best parts of several different
- projects, including [generator-express](https://github.com/expressjs/generator),
- [generator-restify-mongo](https://github.com/lawrence-yu/generator-restify-mongo), and
- [generator-restify](https://github.com/chris-l/generator-restify).
+Restify, used most notably by [Netflix](http://techblog.netflix.com/2014/11/nodejs-in-flames.html),
+ borrows heavily from [Express](http://expressjs.com), according to the Restify website. However, while Express is targeted at browser
+ applications, with templating and rendering, Restify is keenly focused on building API services that are maintainable and observable.
 
 Along with Node, Restify, and MongoDB, the project also implements the following packages: [Bunyan](https://github.com/trentm/node-bunyan)
  (includes [DTrace](http://dtrace.org/blogs/about/) support), [Jasmine](https://github.com/mhevery/jasmine-node)
  (using [jasmine-node](https://github.com/mhevery/jasmine-node)),
  [Mongoose](http://mongoosejs.com/index.html), and [Grunt](http://gruntjs.com).
 
+Portions of this project's file structure and code are derived from what I consider the best parts of several different
+ projects, including [generator-express](https://github.com/expressjs/generator),
+ [generator-restify-mongo](https://github.com/lawrence-yu/generator-restify-mongo), and
+ [generator-restify](https://github.com/chris-l/generator-restify).
+
 ## Installation
-First, install [Yeoman](http://yeoman.io) and generator-node-restify-mongodb using [npm](https://www.npmjs.com/)
- (we assume you have pre-installed [node.js](https://nodejs.org/)).
+To begin, install install [Yeoman](http://yeoman.io) and generator-node-restify-mongodb using [npm](https://www.npmjs.com/),
+ using npm. The generator assumes you have pre-installed Node and MongoDB.
 ``` bash
 npm install -g yo
 npm install -g generator-node-restify-mongodb
 ```
-
-Then generate your new project
+Then, generate the new project.
 ``` bash
+mkdir node-restify-mongodb
+node-restify-mongodb
 yo node-restify-mongodb
 ```
 
+Yeoman scaffolds the application, creating the directory structure, copying required files, and running 'npm install' to load the npm package dependencies.
+
 ## Using the Generated Application
-Import sample widget documents into MongoDB from the supplied 'data/widgets.json' file
+Next, import the supplied set of sample widget documents into the local development instance of MongoDB from the supplied 'data/widgets.json' file.
 ``` bash
-# import to local development environment
-grunt mongoimport --verbose
-  
-# import to production environment db instance
+NODE_ENV=development grunt mongoimport --verbose
+```
+
+Derived from Yeoman's Express Generator, this application contains configuration for three typical environments:
+ 'Development' (default), 'Test', and 'Production'. If you want to import the sample widget documents into your Test or
+  Production instances of MongoDB, first change the 'NODE_ENV' environment variable value.
+``` bash
 NODE_ENV=production grunt mongoimport --verbose
 ```
 
-Start the application
+To start the application in a new terminal window, use the following command.
+
 ``` bash
-npm run
+npm start
 ```
 
-To test the application using jshint and jasmine-node, the sample documents must be imported into MongoDB (see above), and the application must be running (see above)
+To test the application, using jshint and the jasmine-node module, the sample documents must be imported into MongoDB
+ and the application must be running (see above). To test the application, open a separate terminal window, and use the following command.
 ``` bash
 npm test
 ```
 
-Similarly, to review code coverage, using grunt, mocha, istanbul, and grunt-mocha-istanbul
+The project contains a set of jasmine-node tests, split between the '/widgets' and the '/utils' endpoints.
+ If the application is running correctly, you should the test results displayed in the terminal window.
+
+Similarly, the following command displays a code coverage report, using the grunt, mocha, istanbul, and grunt-mocha-istanbul node modules.
 ``` bash
 grunt coverage
 ```
 
+Grunt uses the grunt-mocha-istanbul module to execute the same set of jasmine-node tests as shown above.
+ Based on those tests, the application's code coverage (statement, line, function, and branch coverage) is displayed.
 
-
-Test the running application by cURLing the '/widgets' endpoint
+You may test the running application, directly, by cURLing the '/widgets' endpoints.
 ``` bash
 curl -X GET -H "Accept: application/json" "http://localhost:3000/widgets"
 ```
-For a better output, try
+
+For more legible output, try [prettyjson](https://www.npmjs.com/package/prettyjson).
 ``` bash
-npm install -g json
-curl -X GET -H "Accept: application/json" "http://localhost:3000/widgets" --silent | json
-curl -X GET -H "Accept: application/json" "http://localhost:3000/widgets/SVHXPAWEOD" --silent | json
+npm install -g prettyjson
+curl -X GET -H "Accept: application/json" "http://localhost:3000/widgets" --silent | prettyjson
+curl -X GET -H "Accept: application/json" "http://localhost:3000/widgets/SVHXPAWEOD" --silent | prettyjson
 ```
 
+A much better RESTful API testing solution is [Postman](https://www.getpostman.com/). Postman provides the ability to
+ individually configure each environment and abstract that environment-specific configuration, such as host and port,
+ from the actual HTTP requests.
+
 #### API Endpoints
-The current API endpoints, include the following
+The scaffolded application includes the following endpoints.
 ``` javascript
 # widget resources
 var PATH = '/widgets';
@@ -78,7 +101,7 @@ server.get({path: PATH + '/:product_id', version: VERSION}, findOneDocument);
 server.post({path: PATH, version: VERSION}, createDocument);
 server.put({path: PATH, version: VERSION}, updateDocument);
 server.del({path: PATH + '/:product_id', version: VERSION}, deleteDocument);
-  
+
 # utility resources
 var PATH = '/utils';
 server.get({path: PATH + '/ping', version: VERSION}, ping);
@@ -89,8 +112,9 @@ server.get({path: PATH + '/env', version: VERSION}, environment);
 ```
 
 #### Widget
-The basic 'widget' object is used throughout, to demonstrate Mongoose's
- [Model](http://mongoosejs.com/docs/models.html) and [Schema](http://mongoosejs.com/docs/guide.html)
+The Widget is the basic document object used throughout the application. It is used primarily, to demonstrate
+ Mongoose's [Model](http://mongoosejs.com/docs/models.html) and [Schema](http://mongoosejs.com/docs/guide.html).
+ The Widget object contains the following fields, as shown in the sample widget, below.
 ``` json
 {
   "product_id": "4OZNPBMIDR",
@@ -103,7 +127,7 @@ The basic 'widget' object is used throughout, to demonstrate Mongoose's
 ```
 
 #### MongoDB
-To access the application's MongoDB database with sample documents
+Use the [mongo shell](https://docs.mongodb.com/manual/mongo/) to access the application's MongoDB instance and display the imported sample documents.
 ```
 mongo
  > show dbs
@@ -123,7 +147,10 @@ mongo
 ```
 
 #### Environmental Variables
-The application uses the following environment variables and defaults, which are found in the 'config/config.js' file.
+The scaffolded application relies on several environment variables to determine its environment-specific runtime
+ configuration. If these environment variables are present, the application defaults to using the Development
+ environment values, as shown below, in the application's 'config/config.js' file.
+
 ``` javascript
 var NODE_ENV   = process.env.NODE_ENV   || 'development';
 var NODE_HOST  = process.env.NODE_HOST  || '127.0.0.1';
@@ -134,15 +161,19 @@ var LOG_LEVEL  = process.env.LOG_LEVEL  || 'info';
 var APP_NAME   = 'node-restify-mongodb-';
 ```
 
-## Getting To Know Yeoman
+## Future Project TODOs
+Some future enhancements to the project include the following.
 
- * Yeoman has a heart of gold.
- * Yeoman is a person with feelings and opinions, but is very easy to work with.
- * Yeoman can be too opinionated at times but is easily convinced not to be.
- * Feel free to [learn more about Yeoman](http://yeoman.io/).
+* ~~Add jasmine-node tests for new Utility endpoints~~
+* ~~Add jasmine-node tests for Widget endpoints~~
+* Stop and start the application directly from Jasmine tests
+* Add ability to read query params
+* Add filtering, sorting, field selection and paging
+* Add HATEOAS features to responses
+* Add authentication and authorization to production MongoDB instance
+* Convert from out-dated jasmine-node to Jasmine?
 
 ## License
-
 Apache-2.0 © [Gary A. Stafford](http://www.programmaticponderings.com)
 
 
