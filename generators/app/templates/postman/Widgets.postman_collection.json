@@ -1,0 +1,221 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Widgets",
+		"_postman_id": "b0554bde-d0fe-448d-3203-4bbb95e54c96",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/widgets",
+			"request": {
+				"url": "http://{{hostname}}:{{port}}/widgets",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/widgets/N212QZOD9B",
+			"request": {
+				"url": "http://{{hostname}}:{{port}}/widgets/N212QZOD9B",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/widgets/N212QZOD9B",
+			"request": {
+				"url": "http://{{hostname}}:{{port}}/widgets/N212QZOD9B",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/widgets",
+			"request": {
+				"url": "http://{{hostname}}:{{port}}/widgets",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"product_id\": \"N212QZOD9B\",\n\t\"name\": \"Pentwist\",\n\t\"color\": \"Yellow\",\n\t\"size\": \"Huge\",\n\t\"price\": \"$159.98\",\n\t\"inventory\": 95\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/widgets",
+			"request": {
+				"url": "http://{{hostname}}:{{port}}/widgets",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"product_id\": \"N212QZOD9B\",\n\t\"name\": \"Pentwist\",\n\t\"color\": \"Yellow\",\n\t\"size\": \"Huge\",\n\t\"price\": \"$169.98\",\n\t\"inventory\": 91\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/utils/ping",
+			"request": {
+				"url": "http://{{hostname}}:{{port}}/utils/ping",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "text/plain",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/utils/health",
+			"request": {
+				"url": "http://{{hostname}}:{{port}}/utils/health",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/utils/info",
+			"request": {
+				"url": "http://{{hostname}}:{{port}}/utils/info",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/utils/config",
+			"request": {
+				"url": "http://{{hostname}}:{{port}}/utils/config",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "/utils/env",
+			"request": {
+				"url": "http://{{hostname}}:{{port}}/utils/env",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

@@ -43,6 +43,13 @@ module.exports = yeoman.Base.extend({
     this.copy('spec/utils_spec.js', 'spec/utils_spec.js');
     this.copy('spec/widget_spec.js', 'spec/widget_spec.js');
   },
+  postman: function () {
+    mkdirp('spec');
+    this.copy('postman/localhost-restify.postman_environment.json',
+      'postman/localhost-restify.postman_environment.json');
+    this.copy('postman/Widgets.postman_collection.json',
+      'postman/Widgets.postman_collection.json');
+  },
   grunt: function () {
     this.copy('Gruntfile.js', 'Gruntfile.js');
   },

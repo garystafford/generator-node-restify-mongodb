@@ -24,6 +24,10 @@ const expectedFiles = {
     'spec/utils_spec.js',
     'spec/widget_spec.js'
   ],
+  postman: [
+    'postman/localhost-restify.postman_environment.json',
+    'postman/Widgets.postman_collection.json'
+  ],
   grunt: [
     'Gruntfile.js'
   ],
@@ -52,6 +56,7 @@ describe('generator-node-restify-mongodb:app', function () {
     assert.file(expectedFiles.config);
     assert.file(expectedFiles.data);
     assert.file(expectedFiles.spec);
+    assert.file(expectedFiles.postman);
     assert.file(expectedFiles.grunt);
     assert.file(expectedFiles.projectfiles);
   });
