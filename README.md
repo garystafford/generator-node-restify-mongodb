@@ -36,6 +36,8 @@ yo node-restify-mongodb
 ```
 
 Yeoman scaffolds the application, creating the directory structure, copying required files, and running 'npm install' to load the npm package dependencies.
+  
+![Scaffolding Project](https://programmaticponderings.files.wordpress.com/2016/06/cover_shot_yeoman1.png)
 
 ## Using the Generated Application
 Next, import the supplied set of sample widget documents into the local development instance of MongoDB from the supplied 'data/widgets.json' file.
@@ -89,7 +91,7 @@ A much better RESTful API testing solution is [Postman](https://www.getpostman.c
  individually configure each environment and abstract that environment-specific configuration, such as host and port,
  from the actual HTTP requests.
 
-#### API Endpoints
+## API REST Endpoints
 The scaffolded application includes the following endpoints.
 ``` javascript
 # widget resources
@@ -109,7 +111,7 @@ server.get({path: PATH + '/config', version: VERSION}, configuraton);
 server.get({path: PATH + '/env', version: VERSION}, environment);
 ```
 
-#### Widget
+## Widget
 The Widget is the basic document object used throughout the application. It is used, primarily, to demonstrate
  Mongoose's [Model](http://mongoosejs.com/docs/models.html) and [Schema](http://mongoosejs.com/docs/guide.html).
  The Widget object contains the following fields, as shown in the sample widget, below.
@@ -124,7 +126,7 @@ The Widget is the basic document object used throughout the application. It is u
 }
 ```
 
-#### MongoDB
+## MongoDB
 Use the [mongo shell](https://docs.mongodb.com/manual/mongo/) to access the application's MongoDB instance and display
  the imported sample documents.
 ``` text
@@ -145,7 +147,7 @@ mongo
   { "_id" : ObjectId("574cf9bb0f515d7c67a8702f"), "product_id" : "GKO1SFX04M", "name" : "Jukelox", "color" : "Blue", "size" : "Small", "price" : "$25.49", "inventory" : 75 }
 ```
 
-#### Environmental Variables
+## Environmental Variables
 The scaffolded application relies on several environment variables to determine its environment-specific runtime
  configuration. If these environment variables are present, the application defaults to using the Development
  environment values, as shown below, in the application's 'config/config.js' file.
