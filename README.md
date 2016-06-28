@@ -31,7 +31,7 @@ npm install -g generator-node-restify-mongodb
 Then, generate the new project.
 ``` bash
 mkdir node-restify-mongodb
-node-restify-mongodb
+cd $_
 yo node-restify-mongodb
 ```
 
@@ -161,14 +161,9 @@ var APP_NAME   = 'node-restify-mongodb-';
 ```
 
 ## Future Project TODOs
-Some future enhancements to the project include the following.
-
-* ~~Add jasmine-node tests for new Utility endpoints~~
-* ~~Add jasmine-node tests for Widget endpoints~~
-* Stop and start the application directly from Jasmine tests
-* Add ability to read query params
+Future project enhancements include the following:
 * Add filtering, sorting, field selection and paging
-* Add HATEOAS features to responses
+* Add basic HATEOAS-based response features
 * Add authentication and authorization to production MongoDB instance
 * Convert from out-dated jasmine-node to Jasmine?
 
