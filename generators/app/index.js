@@ -58,6 +58,7 @@ module.exports = yeoman.Base.extend({
     this.copy('db-connection.js', 'db-connection.js');
     this.copy('log.js', 'log.js');
     this.copy('.gitignore', '.gitignore');
+    this.copy('.npmignore', '.npmignore');
     this.copy('.editorconfig', '.editorconfig');
   }
 });
