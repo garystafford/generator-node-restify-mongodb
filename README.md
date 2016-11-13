@@ -31,7 +31,7 @@ yo node-restify-mongodb
 
 Yeoman scaffolds the application, creating the directory structure, copying required files, and running 'npm install' to load the npm package dependencies.
 
-![Scaffolding Project](https://programmaticponderings.files.wordpress.com/2016/06/cover_shot_yeoman1.png)
+![Scaffolding Project](preview.png)
 
 ## Using the Generated Application
 

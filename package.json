@@ -27,12 +27,6 @@
     "restful",
     "yeoman-generator"
   ],
-  "eslintConfig": {
-    "extends": "xo-space",
-    "env": {
-      "mocha": true
-    }
-  },
   "dependencies": {
     "chalk": "^1.x",
     "mkdirp": "^0.x",
@@ -53,5 +47,11 @@
     "gulp-plumber": "^1.x",
     "yeoman-assert": "^2.x",
     "yeoman-test": "^1.x"
+  },
+  "eslintConfig": {
+    "extends": "xo-space",
+    "env": {
+      "mocha": true
+    }
   }
 }
