@@ -1,12 +1,18 @@
 {
   "name": "generator-node-restify-mongodb",
-  "version": "0.1.9",
+  "version": "0.2.0",
   "description": "Scaffolds a basic RESTful CRUD API service, based on Node, Restify, and MongoDB",
   "homepage": "https://github.com/garystafford/generator-node-restify-mongodb",
+  "license": "MIT",
   "author": {
     "name": "Gary A. Stafford",
     "email": "garystafford@rochester.rr.com",
     "url": "http://www.programmaticponderings.com"
+  },
+  "repository": "garystafford/generator-node-restify-mongodb",
+  "scripts": {
+    "prepublish": "gulp prepublish",
+    "test": "gulp"
   },
   "files": [
     "generators"
@@ -21,37 +27,31 @@
     "restful",
     "yeoman-generator"
   ],
-  "dependencies": {
-    "chalk": "^1.0.0",
-    "mkdirp": "^0.5.1",
-    "yeoman-generator": "^0.23.0",
-    "yosay": "^1.0.0"
-  },
-  "devDependencies": {
-    "eslint": "^2.1.0",
-    "eslint-config-xo-space": "^0.14.0",
-    "gulp": "^3.9.0",
-    "gulp-coveralls": "^0.1.0",
-    "gulp-eslint": "^2.0.0",
-    "gulp-exclude-gitignore": "^1.0.0",
-    "gulp-istanbul": "^1.0.0",
-    "gulp-line-ending-corrector": "^1.0.1",
-    "gulp-mocha": "^2.0.0",
-    "gulp-nsp": "^2.1.0",
-    "gulp-plumber": "^1.0.0",
-    "yeoman-assert": "^2.0.0",
-    "yeoman-test": "^1.0.0"
-  },
   "eslintConfig": {
     "extends": "xo-space",
     "env": {
       "mocha": true
     }
   },
-  "repository": "garystafford/generator-node-restify-mongodb",
-  "scripts": {
-    "prepublish": "gulp prepublish",
-    "test": "gulp"
+  "dependencies": {
+    "chalk": "^1.x",
+    "mkdirp": "^0.x",
+    "yeoman-generator": "^0.x",
+    "yosay": "^1.x"
   },
-  "license": "Apache-2.0"
+  "devDependencies": {
+    "eslint": "^3.x",
+    "eslint-config-xo-space": "^0.x",
+    "gulp": "^3.x",
+    "gulp-coveralls": "^0.x",
+    "gulp-eslint": "^3.x",
+    "gulp-exclude-gitignore": "^1.x",
+    "gulp-istanbul": "^1.x",
+    "gulp-line-ending-corrector": "^1.x",
+    "gulp-mocha": "^3.x",
+    "gulp-nsp": "^2.x",
+    "gulp-plumber": "^1.x",
+    "yeoman-assert": "^2.x",
+    "yeoman-test": "^1.x"
+  }
 }

@@ -3,28 +3,30 @@
   "version": "0.0.0",
   "description": "A basic RESTful CRUD API service, based on Node, Restify, and MongoDB",
   "author": "",
+  "license": "",
+  "repository": "",
   "main": "app.js",
   "scripts": {
     "start": "node app.js | ./node_modules/bunyan/bin/bunyan",
     "test": "grunt test"
   },
   "dependencies": {
-    "bunyan": "^1.8.1",
-    "mongoose": "^4.4.20",
-    "mongoose-currency": "^0.2.0",
-    "mongoose-unique-validator": "^1.0.2",
-    "restify": "^4.1.0"
+    "bunyan": "^1.x",
+    "mongoose": "^4.x",
+    "mongoose-currency": "^0.x",
+    "mongoose-unique-validator": "^1.x",
+    "restify": "^4.x"
   },
   "devDependencies": {
-    "grunt": "^1.0.1",
-    "grunt-exec": "^1.0.0",
-    "grunt-mocha-istanbul": "^5.0.1",
-    "grunt-mongoimport": "^0.1.7",
-    "istanbul": "^0.4.4",
-    "jasmine-node": "^1.14.5",
-    "jshint": "^2.9.2",
-    "mocha": "^2.5.3",
-    "request": "^2.72.0",
-    "should": "^9.0.2"
+    "grunt": "^1.x",
+    "grunt-exec": "^1.x",
+    "grunt-mocha-istanbul": "^5.x",
+    "grunt-mongoimport": "^0.x",
+    "istanbul": "^0.x",
+    "jasmine-node": "^1.x",
+    "jshint": "^2.x",
+    "mocha": "^3.x",
+    "request": "^2.x",
+    "should": "^11.x"
   }
 }

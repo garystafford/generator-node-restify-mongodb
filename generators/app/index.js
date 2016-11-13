@@ -8,7 +8,7 @@ module.exports = yeoman.Base.extend({
   prompting: function () {
     // Have Yeoman greet the user.
     this.log(yosay(
-      'Welcome to the ' + chalk.red('generator-node-restify-mongodb') + ' generator!'
+      'Welcome to the ' + chalk.red('Node-Restify-MongoDB') + ' Generator!'
     ));
   },
   install: function () {
@@ -57,8 +57,13 @@ module.exports = yeoman.Base.extend({
     this.copy('package.json', 'package.json');
     this.copy('db-connection.js', 'db-connection.js');
     this.copy('log.js', 'log.js');
-    this.copy('.gitignore', '.gitignore');
     this.copy('.npmignore', '.npmignore');
+    this.copy('.gitignore', '.gitignore');
+    //npm renames .gitignore in .npmignore when publishing,
+    //so rename back to .gitignore
+    if (this.fs.exists(this.templatePath('.npmignore'))) {
+      this.fs.copy('.npmignore', '.gitignore');
+    }
     this.copy('.editorconfig', '.editorconfig');
   }
 });
