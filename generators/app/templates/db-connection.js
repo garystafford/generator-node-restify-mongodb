@@ -9,6 +9,7 @@ var log = require(path.join(__dirname, 'log'));
 
 module.exports = function () {
   var db_url = ''.concat('mongodb://', config.db.host, ':', config.db.port, '/', config.db.name);
+  mongoose.Promise = global.Promise;
   mongoose.connect(db_url);
   var db = mongoose.connection;
   // db.on('connected', function () {

@@ -1,7 +1,7 @@
 {
   "name": "generator-node-restify-mongodb",
-  "version": "0.2.0",
-  "description": "Scaffolds a basic RESTful CRUD API service, based on Node, Restify, and MongoDB",
+  "version": "0.2.1",
+  "description": "Scaffolds a basic RESTful microservice, based on Node, Restify, and MongoDB",
   "homepage": "https://github.com/garystafford/generator-node-restify-mongodb",
   "license": "MIT",
   "author": {
@@ -19,12 +19,14 @@
   ],
   "main": "generators/index.js",
   "keywords": [
-    "restify",
+    "api",
+    "jasmine",
+    "microservice",
     "mongodb",
     "node",
-    "jasmine",
-    "api",
     "restful",
+    "RESTful",
+    "restify",
     "yeoman-generator"
   ],
   "dependencies": {
