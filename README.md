@@ -175,7 +175,7 @@ Future project enhancements include the following:
 
 ## License
 
-Apache-2.0 © [Gary A. Stafford](http://www.programmaticponderings.com)
+MIT © [Gary A. Stafford](http://www.programmaticponderings.com)
 
 [coveralls-image]: https://coveralls.io/repos/garystafford/generator-node-restify-mongodb/badge.svg
 [coveralls-url]: https://coveralls.io/r/garystafford/generator-node-restify-mongodb
