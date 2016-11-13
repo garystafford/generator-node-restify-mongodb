@@ -12,7 +12,7 @@
   "repository": "garystafford/generator-node-restify-mongodb",
   "scripts": {
     "prepublish": "gulp prepublish",
-    "test": "gulp"
+    "test": "gulp test"
   },
   "files": [
     "generators"
