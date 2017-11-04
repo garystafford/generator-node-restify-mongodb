@@ -15,14 +15,11 @@ module.exports = class extends Generator {
   install() {
     this.installDependencies({
       bower: false,
-      yarn: {force: true},
-      npm: false
+      npm: true
     }).then(() => console.log('npm dependencies installed!'))
   }
 
   app() {
-    console.log(this.projectfiles());
-    console.log(this.destinationPath());
     this.fs.copy('app.js', 'app.js');
     mkdirp('app/models');
     mkdirp('app/routes');
