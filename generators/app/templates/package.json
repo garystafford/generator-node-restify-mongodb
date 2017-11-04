@@ -11,22 +11,22 @@
     "test": "grunt test"
   },
   "dependencies": {
-    "bunyan": "^1.x",
+    "bunyan": "^2.x",
     "mongoose": "^4.x",
     "mongoose-currency": "^0.x",
     "mongoose-unique-validator": "^1.x",
-    "restify": "^4.x"
+    "restify": "^6.x"
   },
   "devDependencies": {
     "grunt": "^1.x",
-    "grunt-exec": "^1.x",
+    "grunt-exec": "^3.x",
     "grunt-mocha-istanbul": "^5.x",
     "grunt-mongoimport": "^0.x",
-    "istanbul": "^0.x",
-    "jasmine-node": "^1.x",
+    "istanbul": "1.1.0-alpha.1",
+    "jasmine-node": "^2.x",
     "jshint": "^2.x",
-    "mocha": "^3.x",
+    "mocha": "^4.x",
     "request": "^2.x",
-    "should": "^11.x"
+    "should": "^13.x"
   }
 }

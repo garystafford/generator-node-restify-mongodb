@@ -1,6 +1,6 @@
 {
   "name": "generator-node-restify-mongodb",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Scaffolds a basic RESTful microservice, based on Node, Restify, and MongoDB",
   "homepage": "https://github.com/garystafford/generator-node-restify-mongodb",
   "license": "MIT",
@@ -30,25 +30,25 @@
     "yeoman-generator"
   ],
   "dependencies": {
-    "chalk": "^1.x",
-    "mkdirp": "^0.x",
-    "yeoman-generator": "^0.x",
-    "yosay": "^1.x"
+    "chalk": "^2.3.0",
+    "mkdirp": "^0.5.1",
+    "yeoman-generator": "^2.0.1",
+    "yosay": "^2.0.1"
   },
   "devDependencies": {
-    "eslint": "^3.x",
-    "eslint-config-xo-space": "^0.x",
-    "gulp": "^3.x",
-    "gulp-coveralls": "^0.x",
-    "gulp-eslint": "^3.x",
-    "gulp-exclude-gitignore": "^1.x",
-    "gulp-istanbul": "^1.x",
-    "gulp-line-ending-corrector": "^1.x",
-    "gulp-mocha": "^3.x",
-    "gulp-nsp": "^2.x",
-    "gulp-plumber": "^1.x",
-    "yeoman-assert": "^2.x",
-    "yeoman-test": "^1.x"
+    "eslint": "^4.10.0",
+    "eslint-config-xo-space": "^0.17.0",
+    "gulp": "^3.9.1",
+    "gulp-coveralls": "^0.1.4",
+    "gulp-eslint": "^4.0.0",
+    "gulp-exclude-gitignore": "^1.2.0",
+    "gulp-istanbul": "^1.1.2",
+    "gulp-line-ending-corrector": "^1.0.1",
+    "gulp-mocha": "^4.3.1",
+    "gulp-nsp": "^2.4.2",
+    "gulp-plumber": "^1.1.0",
+    "yeoman-assert": "^3.1.0",
+    "yeoman-test": "^1.7.0"
   },
   "eslintConfig": {
     "extends": "xo-space",
