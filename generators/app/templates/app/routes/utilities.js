@@ -8,16 +8,16 @@ let PATH = '/utils';
 let VERSION = '1.0.0';
 
 module.exports = function (server) {
+  let ping = (req, res, next) => {
+    res.send(200, 'true');
+    return next();
+  };
   server.get({path: PATH + '/ping', version: VERSION}, ping);
   server.get({path: PATH + '/health', version: VERSION}, health);
   server.get({path: PATH + '/info', version: VERSION}, information);
-  server.get({path: PATH + '/config', version: VERSION}, configuraton);
+  server.get({path: PATH + '/config', version: VERSION}, configuration);
   server.get({path: PATH + '/env', version: VERSION}, environment);
 
-  function ping(req, res, next) {
-    res.send(200, 'true');
-    return next();
-  }
 
   function health(req, res, next) {
     res.json(200, {status: 'UP'});
@@ -26,7 +26,7 @@ module.exports = function (server) {
 
   // Can be found with env URI
   function information(req, res, next) {
-    var app_info = {
+    let app_info = {
       name: process.env.npm_package_name,
       version: process.env.npm_package_version,
       description: process.env.npm_package_description,
@@ -36,7 +36,7 @@ module.exports = function (server) {
     return next();
   }
 
-  function configuraton(req, res, next) {
+  function configuration(req, res, next) {
     res.send(200, config);
     return next();
   }
