@@ -17,9 +17,9 @@ var server = restify.createServer({
   log: log
 });
 
-server.use(restify.bodyParser());
-server.use(restify.queryParser());
-server.use(restify.gzipResponse());
+server.use(restify.plugins.bodyParser());
+server.use(restify.plugins.queryParser());
+server.use(restify.plugins.gzipResponse());
 server.pre(restify.pre.sanitizePath());
 server.use(
   function crossOrigin(req, res, next) {
@@ -40,7 +40,11 @@ server.on('uncaughtException', function (req, res, route, err) {
   res.end();
 });
 
-server.on('after', restify.auditLogger({log: log}));
+// server.on('after', restify.plugins.auditLogger(
+//   {
+//     log: log
+//   })
+// );
 
 models();
 routes(server);

@@ -2,7 +2,6 @@
 'use strict';
 
 var path = require('path');
-
 var config = require(path.join(__dirname, '../../config/config'));
 
 var PATH = '/utils';
@@ -16,7 +15,7 @@ module.exports = function (server) {
   server.get({path: PATH + '/env', version: VERSION}, environment);
 
   function ping(req, res, next) {
-    res.send(200, true);
+    res.send(200, 'true');
     return next();
   }
 

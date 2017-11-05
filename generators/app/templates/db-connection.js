@@ -2,16 +2,19 @@
 'use strict';
 
 var mongoose = require('mongoose');
+mongoose.Promise = require('bluebird');
 var path = require('path');
 
 var config = require(path.join(__dirname, '/config/config'));
 var log = require(path.join(__dirname, 'log'));
 
 module.exports = function () {
-  var db_url = ''.concat('mongodb://', config.db.host, ':', config.db.port, '/', config.db.name);
-  mongoose.Promise = global.Promise;
-  mongoose.connect(db_url);
-  var db = mongoose.connection;
+  var uri = ''.concat('mongodb://', config.db.host, ':', config.db.port, '/', config.db.name);
+  var options = { useMongoClient: true, promiseLibrary: require('bluebird') };
+  mongoose.connect(uri);
+  // mongoose.connect(uri, options);
+  // var db = mongoose.createConnection(uri, options);
+
   // db.on('connected', function () {
   //   log.info('Mongodb connection open to ' + db_url);
   // });

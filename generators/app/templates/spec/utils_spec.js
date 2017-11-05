@@ -85,10 +85,10 @@ describe('Utility URIs', function () {
       });
     });
 
-    it('should respond with exactly (1) \'info\' object containing (4) properties', function (done) {
+    it('should respond with exactly (1) \'info\' object containing (3) properties', function (done) {
       request(options, function (error, response, body) {
         var info = JSON.parse(body);
-        Object.keys(info).should.have.a.lengthOf(4);
+        Object.keys(info).should.have.a.lengthOf(3);
         done();
       });
     });

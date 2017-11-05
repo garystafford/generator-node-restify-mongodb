@@ -20,55 +20,55 @@ module.exports = class extends Generator {
   }
 
   app() {
-    this.fs.copy('app.js', 'app.js');
+    this.fs.copy(this.templatePath('app.js'), this.destinationPath('app.js'));
     mkdirp('app/models');
     mkdirp('app/routes');
-    this.fs.copy('app/models/index.js', 'app/models/index.js');
-    this.fs.copy('app/models/widget.js', 'app/models/widget.js');
-    this.fs.copy('app/routes/index.js', 'app/routes/index.js');
-    this.fs.copy('app/routes/widget.js', 'app/routes/widget.js');
-    this.fs.copy('app/routes/utilities.js', 'app/routes/utilities.js');
+    this.fs.copy(this.templatePath('app/models/index.js'), this.destinationPath('app/models/index.js'));
+    this.fs.copy(this.templatePath('app/models/widget.js'), this.destinationPath('app/models/widget.js'));
+    this.fs.copy(this.templatePath('app/routes/index.js'), this.destinationPath('app/routes/index.js'));
+    this.fs.copy(this.templatePath('app/routes/widget.js'), this.destinationPath('app/routes/widget.js'));
+    this.fs.copy(this.templatePath('app/routes/utilities.js'), this.destinationPath('app/routes/utilities.js'));
   }
 
   config() {
     mkdirp('config');
-    this.fs.copy('config/config.js', 'config/config.js');
+    this.fs.copy(this.templatePath('config/config.js'), this.destinationPath('config/config.js'));
   }
 
   data() {
     mkdirp('data');
-    this.fs.copy('data/widgets.json', 'data/widgets.json');
+    this.fs.copy(this.templatePath('data/widgets.json'), this.destinationPath('data/widgets.json'));
   }
 
   spec() {
     mkdirp('spec');
-    this.fs.copy('spec/utils_spec.js', 'spec/utils_spec.js');
-    this.fs.copy('spec/widget_spec.js', 'spec/widget_spec.js');
+    this.fs.copy(this.templatePath('spec/utils_spec.js'), this.destinationPath('spec/utils_spec.js'));
+    this.fs.copy(this.templatePath('spec/widget_spec.js'), this.destinationPath('spec/widget_spec.js'));
   }
 
   postman() {
     mkdirp('spec');
-    this.fs.copy('postman/localhost-restify.postman_environment.json',
-      'postman/localhost-restify.postman_environment.json');
-    this.fs.copy('postman/Widgets.postman_collection.json',
-      'postman/Widgets.postman_collection.json');
+    this.fs.copy(this.templatePath('postman/localhost-restify.postman_environment.json'),
+      this.destinationPath('postman/localhost-restify.postman_environment.json'));
+    this.fs.copy(this.templatePath('postman/Widgets.postman_collection.json'),
+      this.destinationPath('postman/Widgets.postman_collection.json'));
   }
 
   grunt() {
-    this.fs.copy('Gruntfile.js', 'Gruntfile.js');
+    this.fs.copy(this.templatePath('Gruntfile.js'), this.destinationPath('Gruntfile.js'));
   }
 
   projectfiles() {
-    this.fs.copy('package.json', 'package.json');
-    this.fs.copy('db-connection.js', 'db-connection.js');
-    this.fs.copy('log.js', 'log.js');
-    this.fs.copy('.npmignore', '.npmignore');
-    this.fs.copy('.gitignore', '.gitignore');
+    this.fs.copy(this.templatePath('package.json'), this.destinationPath('package.json'));
+    this.fs.copy(this.templatePath('db-connection.js'), this.destinationPath('db-connection.js'));
+    this.fs.copy(this.templatePath('log.js'), this.destinationPath('log.js'));
+    this.fs.copy(this.templatePath('.npmignore'), this.destinationPath('.npmignore'));
+    this.fs.copy(this.templatePath('.gitignore'), this.destinationPath('.gitignore'));
     //npm renames .gitignore in .npmignore when publishing,
     //so rename back to .gitignore
     if (this.fs.exists(this.templatePath('.npmignore'))) {
-      this.fs.copy('.npmignore', '.gitignore');
+      this.fs.copy(this.templatePath('.npmignore'), this.destinationPath('.gitignore'));
     }
-    this.fs.copy('.editorconfig', '.editorconfig');
+    this.fs.copy(this.templatePath('.editorconfig'), this.destinationPath('.editorconfig'));
   }
 };

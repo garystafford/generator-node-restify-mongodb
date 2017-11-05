@@ -2,7 +2,7 @@
   "name": "node-restify-mongodb",
   "version": "0.0.0",
   "description": "Basic RESTful microservice, based on Node, Restify, and MongoDB",
-  "author": "Author's Name",
+  "author": "Author Name",
   "license": "",
   "repository": "",
   "main": "app.js",
@@ -11,7 +11,8 @@
     "test": "grunt test"
   },
   "dependencies": {
-    "bunyan": "^2.x",
+    "bluebird": "^3.x",
+    "bunyan": "^1.x",
     "mongoose": "^4.x",
     "mongoose-currency": "^0.x",
     "mongoose-unique-validator": "^1.x",
@@ -23,7 +24,7 @@
     "grunt-mocha-istanbul": "^5.x",
     "grunt-mongoimport": "^0.x",
     "istanbul": "1.1.0-alpha.1",
-    "jasmine-node": "^2.x",
+    "jasmine-node": "^1.x",
     "jshint": "^2.x",
     "mocha": "^4.x",
     "request": "^2.x",

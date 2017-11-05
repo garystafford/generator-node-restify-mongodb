@@ -16,7 +16,6 @@ dbConnection();
 
 var widget_model = require(path.join(__dirname, '../app/models/widget'));
 widget_model();
-
 var Widget = mongoose.model('Widget');
 
 var log = require(path.join(__dirname, '../log'));
@@ -223,23 +222,9 @@ describe('Widget URIs', function () {
       json: true
     };
 
-    it('should respond with a status code of 201', function (done) {
+    it('should respond with a status code of 204', function (done) {
       request(options, function (error, response, body) {
-        response.statusCode.should.be.exactly(201);
-        done();
-      });
-    });
-
-    it('should respond with exactly (1) widget object', function (done) {
-      request(options, function (error, response, body) {
-        body.should.be.an.instanceof(Object);
-        done();
-      });
-    });
-
-    it('should respond with a value of \'TestWidget_DC3NHTGNAY\' for \'name\' key', function (done) {
-      request(options, function (error, response, body) {
-        body.should.have.a.property('name', 'TestWidget_DC3NHTGNAY');
+        response.statusCode.should.be.exactly(204);
         done();
       });
     });
@@ -283,7 +268,7 @@ describe('Widget URIs', function () {
 
     it('should respond with an error message: \'Widget validation failed\' when missing \'name\' property', function (done) {
       request(options, function (error, response, body) {
-        body.should.have.a.property('message', 'Widget validation failed');
+        body.should.have.a.property('_message', 'Widget validation failed');
         done();
       });
     });
@@ -329,9 +314,9 @@ describe('Widget URIs', function () {
       json: true
     };
 
-    it('should respond with a status code of 200', function (done) {
+    it('should respond with a status code of 204', function (done) {
       request(options, function (error, response, body) {
-        response.statusCode.should.be.exactly(200);
+        response.statusCode.should.be.exactly(204);
         done();
       });
     });

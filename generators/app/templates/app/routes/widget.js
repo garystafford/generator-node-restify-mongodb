@@ -3,7 +3,6 @@
 
 var mongoose = require('mongoose');
 var path = require('path');
-
 var config = require(path.join(__dirname, '../../config/config'));
 var Widget = mongoose.model('Widget');
 
@@ -52,12 +51,12 @@ module.exports = function (server) {
 
   function createDocument(req, res, next) {
     var widget = new Widget({
-      product_id: req.params.product_id,
-      name: req.params.name,
-      color: req.params.color,
-      size: req.params.size,
-      price: req.params.price,
-      inventory: req.params.inventory
+      product_id: req.body.product_id,
+      name: req.body.name,
+      color: req.body.color,
+      size: req.body.size,
+      price: req.body.price,
+      inventory: req.body.inventory
     });
 
     // http://mongoosejs.com/docs/api.html#model_Model-save
@@ -65,7 +64,7 @@ module.exports = function (server) {
       if (error) {
         return next(error);
       } else {
-        res.send(201, widget);
+        res.send(204);
         return next();
       }
     });
@@ -73,13 +72,13 @@ module.exports = function (server) {
 
   function updateDocument(req, res, next) {
     // http://mongoosejs.com/docs/api.html#model_Model.findOneAndUpdate
-    var conditions = {'product_id': req.params.product_id};
+    var conditions = {'product_id': req.body.product_id};
     var update = {
-      'name': req.params.name,
-      'color': req.params.color,
-      'size': req.params.size,
-      'price': req.params.price,
-      'inventory': req.params.inventory
+      'name': req.body.name,
+      'color': req.body.color,
+      'size': req.body.size,
+      'price': req.body.price,
+      'inventory': req.body.inventory
     };
     var options = {runValidators: true, context: 'query'};
 
@@ -87,7 +86,7 @@ module.exports = function (server) {
       if (error) {
         return next(error);
       } else {
-        res.send(200);
+        res.send(204);
         return next();
       }
     });
