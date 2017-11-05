@@ -1,14 +1,13 @@
 /*jslint node: true */
 'use strict';
 
-var mongoose = require('mongoose');
+let mongoose = require('mongoose');
 require('mongoose-currency').loadType(mongoose);
-var uniqueValidator = require('mongoose-unique-validator');
+let uniqueValidator = require('mongoose-unique-validator');
+let Schema = mongoose.Schema;
+let Currency = mongoose.Types.Currency;
 
-var Schema = mongoose.Schema;
-var Currency = mongoose.Types.Currency;
-
-var widgetSchema = new Schema({
+let widgetSchema = new Schema({
   product_id: {type: String, required: true, index: true, unique: true},
   name: {type: String, required: true},
   color: {
@@ -38,6 +37,6 @@ widgetSchema.set('toJSON', {
   }
 });
 
-var Widget = mongoose.model('Widget', widgetSchema);
+let Widget = mongoose.model('Widget', widgetSchema);
 
 module.exports = Widget;

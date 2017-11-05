@@ -3,21 +3,21 @@
 
 //////////// VARIABLES ///////////////////
 
-var request = require('request');
-var should = require('should');
-var path = require('path');
+let request = require('request');
+let should = require('should');
+let path = require('path');
 
-var config = require(path.join(__dirname, '../config/config'));
-var base_url = ''.concat('http://', config.app.address, ':', config.app.port);
+let config = require(path.join(__dirname, '../config/config'));
+let base_url = ''.concat('http://', config.app.address, ':', config.app.port);
 
 
 //////////// TESTS ///////////////////////
 
 describe('Utility URIs', function () {
   describe('GET /utils/ping', function () {
-    var url = base_url + '/utils/ping';
+    let url = base_url + '/utils/ping';
 
-    var options = {
+    let options = {
       method: 'GET',
       url: url,
       headers: {
@@ -41,9 +41,9 @@ describe('Utility URIs', function () {
   });
 
   describe('GET /utils/health', function () {
-    var url = base_url + '/utils/health';
+    let url = base_url + '/utils/health';
 
-    var options = {
+    let options = {
       method: 'GET',
       url: url,
       headers: {
@@ -60,7 +60,7 @@ describe('Utility URIs', function () {
 
     it('should respond with a \'status\' of \'UP\'', function (done) {
       request(options, function (error, response, body) {
-        var status = JSON.parse(body);
+        let status = JSON.parse(body);
         status.should.have.a.property('status', 'UP');
         done();
       });
@@ -68,9 +68,9 @@ describe('Utility URIs', function () {
   });
 
   describe('GET /utils/info', function () {
-    var url = base_url + '/utils/info';
+    let url = base_url + '/utils/info';
 
-    var options = {
+    let options = {
       method: 'GET',
       url: url,
       headers: {
@@ -87,7 +87,7 @@ describe('Utility URIs', function () {
 
     it('should respond with exactly (1) \'info\' object containing (3) properties', function (done) {
       request(options, function (error, response, body) {
-        var info = JSON.parse(body);
+        let info = JSON.parse(body);
         Object.keys(info).should.have.a.lengthOf(3);
         done();
       });
@@ -95,9 +95,9 @@ describe('Utility URIs', function () {
   });
 
   describe('GET /utils/config', function () {
-    var url = base_url + '/utils/config';
+    let url = base_url + '/utils/config';
 
-    var options = {
+    let options = {
       method: 'GET',
       url: url,
       headers: {
@@ -114,7 +114,7 @@ describe('Utility URIs', function () {
 
     it('should respond with exactly (1) non-null \'config\' object', function (done) {
       request(options, function (error, response, body) {
-        var config = JSON.parse(body);
+        let config = JSON.parse(body);
         config.should.be.an.instanceof(Object).and.not.null;
         done();
       });
@@ -122,9 +122,9 @@ describe('Utility URIs', function () {
   });
 
   describe('GET /utils/env', function () {
-    var url = base_url + '/utils/env';
+    let url = base_url + '/utils/env';
 
-    var options = {
+    let options = {
       method: 'GET',
       url: url,
       headers: {
@@ -141,7 +141,7 @@ describe('Utility URIs', function () {
 
     it('should respond with exactly (1) non-null \'env\' object', function (done) {
       request(options, function (error, response, body) {
-        var env = JSON.parse(body);
+        let env = JSON.parse(body);
         env.should.be.an.instanceof(Object).and.not.null;
         done();
       });

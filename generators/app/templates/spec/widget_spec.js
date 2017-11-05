@@ -3,22 +3,22 @@
 
 //////////// VARIABLES ///////////////////
 
-var request = require('request');
-var mongoose = require('mongoose');
-var should = require('should');
-var path = require('path');
+let request = require('request');
+let mongoose = require('mongoose');
+let should = require('should');
+let path = require('path');
 
-var config = require(path.join(__dirname, '../config/config'));
-var base_url = ''.concat('http://', config.app.address, ':', config.app.port);
+let config = require(path.join(__dirname, '../config/config'));
+let base_url = ''.concat('http://', config.app.address, ':', config.app.port);
 
-var dbConnection = require(path.join(__dirname, '../db-connection'));
+let dbConnection = require(path.join(__dirname, '../db-connection'));
 dbConnection();
 
-var widget_model = require(path.join(__dirname, '../app/models/widget'));
+let widget_model = require(path.join(__dirname, '../app/models/widget'));
 widget_model();
-var Widget = mongoose.model('Widget');
+let Widget = mongoose.model('Widget');
 
-var log = require(path.join(__dirname, '../log'));
+let log = require(path.join(__dirname, '../log'));
 
 
 //////////// HELPER FUNCTIONS ////////////
@@ -80,9 +80,9 @@ describe('Widget URIs', function () {
       removeWidgets({});
     });
 
-    var url = base_url + '/widgets';
+    let url = base_url + '/widgets';
 
-    var options = {
+    let options = {
       method: 'GET',
       url: url,
       headers: {
@@ -99,7 +99,7 @@ describe('Widget URIs', function () {
 
     it('should respond with exactly (3) widget objects in an array', function (done) {
       request(options, function (error, response, body) {
-        var widget = JSON.parse(body);
+        let widget = JSON.parse(body);
         widget.should.be.an.instanceof(Array).and.have.a.lengthOf(3);
         done();
       });
@@ -141,9 +141,9 @@ describe('Widget URIs', function () {
       removeWidgets({});
     });
 
-    var url1 = base_url + '/widgets/4YFZH127BX';
+    let url1 = base_url + '/widgets/4YFZH127BX';
 
-    var options1 = {
+    let options1 = {
       method: 'GET',
       url: url1,
       headers: {
@@ -160,7 +160,7 @@ describe('Widget URIs', function () {
 
     it('should respond with exactly (1) widget object', function (done) {
       request(options1, function (error, response, body) {
-        var widget = JSON.parse(body);
+        let widget = JSON.parse(body);
         widget.should.be.an.instanceof(Object);
         done();
       });
@@ -168,15 +168,15 @@ describe('Widget URIs', function () {
 
     it('should respond with the value of \'TestWidget_4YFZH127BX\' for \'name\' key', function (done) {
       request(options1, function (error, response, body) {
-        var widget = JSON.parse(body);
+        let widget = JSON.parse(body);
         widget.should.have.a.property('name', 'TestWidget_4YFZH127BX');
         done();
       });
     });
 
-    var url2 = base_url + '/widgets/BADPRODUCT';
+    let url2 = base_url + '/widgets/BADPRODUCT';
 
-    var options2 = {
+    let options2 = {
       method: 'GET',
       url: url2,
       headers: {
@@ -201,7 +201,7 @@ describe('Widget URIs', function () {
       removeWidgets({});
     });
 
-    var widget = {
+    let widget = {
       product_id: 'DC3NHTGNAY',
       name: 'TestWidget_DC3NHTGNAY',
       color: 'Green',
@@ -210,9 +210,9 @@ describe('Widget URIs', function () {
       inventory: 27
     };
 
-    var url = base_url + '/widgets';
+    let url = base_url + '/widgets';
 
-    var options = {
+    let options = {
       method: 'POST',
       url: url,
       headers: {
@@ -239,7 +239,7 @@ describe('Widget URIs', function () {
       removeWidgets({});
     });
 
-    var widget = { // no 'name' key
+    let widget = { // no 'name' key
       product_id: 'DC3NHTGNAY',
       color: 'Green',
       size: 'Big',
@@ -247,9 +247,9 @@ describe('Widget URIs', function () {
       inventory: 27
     };
 
-    var url = base_url + '/widgets';
+    let url = base_url + '/widgets';
 
-    var options = {
+    let options = {
       method: 'POST',
       url: url,
       headers: {
@@ -293,7 +293,7 @@ describe('Widget URIs', function () {
       removeWidgets({});
     });
 
-    var widget = { // modified inventory level
+    let widget = { // modified inventory level
       product_id: 'ZC7DV7BSPE',
       name: 'TestWidget_ZC7DV7BSPE',
       color: 'Blue',
@@ -302,9 +302,9 @@ describe('Widget URIs', function () {
       inventory: 21
     };
 
-    var url = base_url + '/widgets';
+    let url = base_url + '/widgets';
 
-    var options = {
+    let options = {
       method: 'PUT',
       url: url,
       headers: {
@@ -343,7 +343,7 @@ describe('Widget URIs', function () {
         inventory: 27
       }));
 
-      var widget = { // modified inventory level
+      let widget = { // modified inventory level
         product_id: 'ZC7DV7BSPE',
         name: 'TestWidget_ZC7DV7BSPE',
         color: 'Blue',
@@ -352,9 +352,9 @@ describe('Widget URIs', function () {
         inventory: 21
       };
 
-      var url1 = base_url + '/widgets';
+      let url1 = base_url + '/widgets';
 
-      var options1 = {
+      let options1 = {
         method: 'PUT',
         url: url1,
         headers: {
@@ -372,9 +372,9 @@ describe('Widget URIs', function () {
       removeWidgets({});
     });
 
-    var url2 = base_url + '/widgets/ZC7DV7BSPE';
+    let url2 = base_url + '/widgets/ZC7DV7BSPE';
 
-    var options2 = {
+    let options2 = {
       method: 'GET',
       url: url2,
       headers: {
@@ -384,7 +384,7 @@ describe('Widget URIs', function () {
 
     it('should respond with new value of \'21\' for \'inventory\' key', function (done) {
       request(options2, function (error, response, body) {
-        var widget = JSON.parse(body);
+        let widget = JSON.parse(body);
         widget.should.have.a.property('inventory', 21);
         done();
       });
@@ -410,9 +410,9 @@ describe('Widget URIs', function () {
       removeWidgets({});
     });
 
-    var url = base_url + '/widgets/3NDO87DF3C';
+    let url = base_url + '/widgets/3NDO87DF3C';
 
-    var options = {
+    let options = {
       method: 'DELETE',
       url: url,
       headers: {

@@ -1,8 +1,8 @@
 /*jslint node: true */
 'use strict';
 
-var fs = require('fs');
-var path = require('path');
+let fs = require('fs');
+let path = require('path');
 
 module.exports = function (server) {
   fs.readdirSync(path.join(__dirname, '.')).forEach(function (file) {

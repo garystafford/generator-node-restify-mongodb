@@ -1,7 +1,7 @@
 /*jslint node: true */
 'use strict';
 
-var fs = require('fs');
+let fs = require('fs');
 
 module.exports = function (server) {
   fs.readdirSync('./app/routes').forEach(function (file) {

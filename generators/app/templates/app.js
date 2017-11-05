@@ -1,18 +1,18 @@
 /*jslint node: true */
 'use strict';
 
-var restify = require('restify');
-var path = require('path');
+let restify = require('restify');
+let path = require('path');
 
-var config = require(path.join(__dirname, '/config/config'));
-var log = require(path.join(__dirname, '/log'));
-var models = require(path.join(__dirname, '/app/models/'));
-var routes = require(path.join(__dirname, '/app/routes/'));
-var dbConnection = require(path.join(__dirname, '/db-connection'));
+let config = require(path.join(__dirname, '/config/config'));
+let log = require(path.join(__dirname, '/log'));
+let models = require(path.join(__dirname, '/app/models/'));
+let routes = require(path.join(__dirname, '/app/routes/'));
+let dbConnection = require(path.join(__dirname, '/db-connection'));
 
 dbConnection();
 
-var server = restify.createServer({
+let server = restify.createServer({
   name: config.app.name,
   log: log
 });

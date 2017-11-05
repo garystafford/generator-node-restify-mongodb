@@ -4,6 +4,8 @@
 
 ## Introduction
 
+__Project updated November, 2017 (v0.3.0), to Restify 6.x from 4.x.__
+
 This Yeoman generator scaffolds a basic RESTful CRUD API service, a Node application, based on [Node.js](https://nodejs.org), [Restify](http://restify.com), and [MongoDB](https://www.mongodb.com).
 
 According to their website, Restify, used most notably by [Netflix](http://techblog.netflix.com/2014/11/nodejs-in-flames.html), borrows heavily from [Express](http://expressjs.com). However, while Express is targeted at browser applications, with templating and rendering, Restify is keenly focused on building API services that are maintainable and observable.

@@ -8,7 +8,7 @@ module.exports = class extends Generator {
   prompting() {
     // Have Yeoman greet the user.
     this.log(yosay(
-      'Welcome to the ' + chalk.red('Node-Restify-MongoDB') + ' Generator!'
+      'Welcome to the ' + chalk.red('Node-Restify-MongoDB v0.3.0') + ' Generator!'
     ));
   }
 
@@ -64,6 +64,7 @@ module.exports = class extends Generator {
     this.fs.copy(this.templatePath('log.js'), this.destinationPath('log.js'));
     this.fs.copy(this.templatePath('.npmignore'), this.destinationPath('.npmignore'));
     this.fs.copy(this.templatePath('.gitignore'), this.destinationPath('.gitignore'));
+    this.fs.copy(this.templatePath('.jshinttc'), this.destinationPath('.jshinttc'));
     //npm renames .gitignore in .npmignore when publishing,
     //so rename back to .gitignore
     if (this.fs.exists(this.templatePath('.npmignore'))) {

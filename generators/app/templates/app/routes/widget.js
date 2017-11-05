@@ -1,13 +1,13 @@
 /*jslint node: true */
 'use strict';
 
-var mongoose = require('mongoose');
-var path = require('path');
-var config = require(path.join(__dirname, '../../config/config'));
-var Widget = mongoose.model('Widget');
+let mongoose = require('mongoose');
+let path = require('path');
+let config = require(path.join(__dirname, '../../config/config'));
+let Widget = mongoose.model('Widget');
 
-var PATH = '/widgets';
-var VERSION = '1.0.0';
+let PATH = '/widgets';
+let VERSION = '1.0.0';
 
 module.exports = function (server) {
   server.get({path: PATH, version: VERSION}, findDocuments);
@@ -18,9 +18,9 @@ module.exports = function (server) {
 
   function findDocuments(req, res, next) {
     // http://mongoosejs.com/docs/api.html#model_Model.find
-    var conditions = {};
-    var projection = {};
-    var options = {};
+    let conditions = {};
+    let projection = {};
+    let options = {};
 
     Widget.find(conditions, projection, options).sort({'name': 1}).exec(function (error, widgets) {
       if (error) {
@@ -35,9 +35,9 @@ module.exports = function (server) {
 
   function findOneDocument(req, res, next) {
     // http://mongoosejs.com/docs/api.html#model_Model.findOne
-    var conditions = {'product_id': req.params.product_id};
-    var projection = {};
-    var options = {};
+    let conditions = {'product_id': req.params.product_id};
+    let projection = {};
+    let options = {};
 
     Widget.findOne(conditions, projection, options, function (error, widget) {
       if (error) {
@@ -50,7 +50,7 @@ module.exports = function (server) {
   }
 
   function createDocument(req, res, next) {
-    var widget = new Widget({
+    let widget = new Widget({
       product_id: req.body.product_id,
       name: req.body.name,
       color: req.body.color,
@@ -72,15 +72,15 @@ module.exports = function (server) {
 
   function updateDocument(req, res, next) {
     // http://mongoosejs.com/docs/api.html#model_Model.findOneAndUpdate
-    var conditions = {'product_id': req.body.product_id};
-    var update = {
+    let conditions = {'product_id': req.body.product_id};
+    let update = {
       'name': req.body.name,
       'color': req.body.color,
       'size': req.body.size,
       'price': req.body.price,
       'inventory': req.body.inventory
     };
-    var options = {runValidators: true, context: 'query'};
+    let options = {runValidators: true, context: 'query'};
 
     Widget.findOneAndUpdate(conditions, update, options, function (error) {
       if (error) {
@@ -94,7 +94,7 @@ module.exports = function (server) {
 
   function deleteDocument(req, res, next) {
     // http://mongoosejs.com/docs/api.html#query_Query-remove
-    var options = {'product_id': req.params.product_id};
+    let options = {'product_id': req.params.product_id};
 
     Widget.remove(options, function (error) {
       if (error) {
